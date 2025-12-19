@@ -1,49 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Company - Contact</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <h1>My Company</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<form action="https://formspree.io/f/xvzpzpnz" method="POST">
+    <input type="hidden" name="_next" value="https://jingyiliao145.github.io/thank-you.html">
 
-    <main>
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:info@mycompany.com">info@mycompany.com</a></p>
-        <p>Phone: +46 76 634 xxxx</p>
-        <p>WeChat: your_wechat_id</p>
-        <p>Instagram: <a href="https://instagram.com/yourcompany" target="_blank">@yourcompany</a></p>
+    <label>Name:</label>
+    <input type="text" name="name" required>
 
-        <hr>
+    <label>Email:</label>
+    <input type="email" name="_replyto" required>
 
-        <h2>Book a Meeting</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <label>Name:</label>
-            <input type="text" name="name" required>
+    <label>Meeting Time:</label>
+    <input type="datetime-local" name="time" required>
 
-            <label>Email:</label>
-            <input type="email" name="_replyto" required>
+    <label>Notes:</label>
+    <textarea name="notes"></textarea>
 
-            <label>Meeting Time:</label>
-            <input type="datetime-local" name="time" required>
-
-            <label>Notes:</label>
-            <textarea name="notes"></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 My Company</p>
-    </footer>
-</body>
-</html>
+    <button type="submit">Submit</button>
+</form>
