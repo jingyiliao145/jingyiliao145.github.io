@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Diamond Ring 1",
+    "price": "$1200",
+    "onSale": false,
+    "image": "images/product1.jpg"
+  },
+  {
+    "name": "Diamond Necklace 2",
+    "price": "$1800",
+    "onSale": true,
+    "image": "images/product2.jpg"
+  },
+  {
+    "name": "Diamond Earrings 3",
+    "price": "$900",
+    "onSale": false,
+    "image": "images/product3.jpg"
+  }
+]
