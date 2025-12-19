@@ -1,20 +1,20 @@
 [
   {
-    "name": "Diamond Ring 1",
-    "price": "$1200",
-    "onSale": false,
+    "name": "Lab-Grown Diamond Round 1ct",
+    "price": "$980",
+    "available": true,
     "image": "images/product1.jpg"
   },
   {
-    "name": "Diamond Necklace 2",
-    "price": "$1800",
-    "onSale": true,
+    "name": "Lab-Grown Diamond Princess 1.5ct",
+    "price": "$1350",
+    "available": false,
     "image": "images/product2.jpg"
   },
   {
-    "name": "Diamond Earrings 3",
-    "price": "$900",
-    "onSale": true,
+    "name": "Lab-Grown Diamond Oval 2ct",
+    "price": "$2100",
+    "available": true,
     "image": "images/product3.jpg"
   }
 ]
