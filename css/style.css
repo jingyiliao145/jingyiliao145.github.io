@@ -1,52 +1,46 @@
-/* ===== HERO BACKGROUND ===== */
-.hero {
+/* ===== 首页背景图片 ===== */
+.hero-image {
     height: 90vh;
+    background-image: url("../images/index-back.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* 半透明遮罩，保证文字可读 */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* 内容 */
+.hero-content {
     text-align: center;
     color: white;
-    background: linear-gradient(
-        120deg,
-        #0f2027,
-        #203a43,
-        #2c5364
-    );
-    background-size: 400% 400%;
-    animation: gradientFlow 12s ease infinite;
-}
-
-/* 背景动画（非常轻微） */
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* 中央内容 */
-.hero-content {
-    max-width: 700px;
+    max-width: 720px;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 10px;
-    backdrop-filter: blur(4px);
 }
 
 .hero-content h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin-bottom: 1rem;
 }
 
 .hero-content p {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
     line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
 /* 按钮 */
 .hero-button {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 12px 30px;
     background-color: #ffffff;
     color: #222;
     text-decoration: none;
