@@ -100,7 +100,7 @@ footer {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 24px; /* 原来更大，这里收紧 */
+    gap: 24px;
     margin-top: 24px;
 }
 
@@ -108,22 +108,19 @@ footer {
     text-align: center;
 }
 
-/* 产品图片 */
 .product-img {
     width: 220px;
     height: 220px;
     object-fit: cover;
     display: block;
-    margin: 0 auto 8px; /* 图片与文字更近 */
+    margin: 0 auto 8px;
 }
 
-/* Sale 红框 */
 .sale-img {
     border: 2px solid #c40000;
     box-shadow: 0 0 6px rgba(196, 0, 0, 0.5);
 }
 
-/* 产品文字区域 */
 .product-info h3 {
     font-size: 15px;
     margin: 4px 0;
@@ -134,7 +131,6 @@ footer {
     font-size: 14px;
 }
 
-/* 状态 */
 .status {
     display: inline-block;
     margin-top: 4px;
@@ -150,19 +146,50 @@ footer {
     color: #888888;
 }
 
-
-/* 非首页页面通用背景 */
+/* ===== 非首页页面通用背景 ===== */
 .page-background {
     background-image: url("../images/index-back.jpg");
-    background-size: cover;
-    background-position: center;
+    background-size: cover;            /* 保证覆盖容器 */
+    background-position: center center;
     background-repeat: no-repeat;
     position: relative;
-    min-height: 100vh; /* 至少占满视窗高度 */
+    width: 100vw;
+    height: 100vh;                     /* 占满整个视口 */
+    display: flex;
+    flex-direction: column;
 }
 
 .page-background .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* 半透明覆盖层，可调整 */
+    background: rgba(0, 0, 0, 0.3);    /* 半透明覆盖层，可调 */
+}
+
+/* ===== 响应式优化 ===== */
+@media (max-width: 768px) {
+    .page-background {
+        background-position: center top; /* 手机竖屏优先显示上方 */
+    }
+
+    .hero-content {
+        max-width: 90%;
+        padding: 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .product-grid {
+        gap: 16px;
+    }
+
+    .product-img {
+        width: 150px;
+        height: 150px;
+    }
 }
