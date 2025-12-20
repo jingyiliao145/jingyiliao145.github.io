@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact Us - My Company</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- 修正 CSS 路径 -->
+    <link rel="stylesheet" href="/css/style.css">
     <style>
-        /* Modal 样式 */
+        /* Modal 样式（保持原样） */
         .modal {
             display: none; 
             position: fixed; 
@@ -53,13 +54,15 @@
     </style>
 </head>
 <body>
+    <!-- 调整 JS 路径 -->
     <script src="/css/nav.js"></script>
+
     <div class="page-background">
         <div class="hero-overlay"></div>
         <main>
             <h2>Contact Us</h2>
 
-            <!-- 保留原有固定公司信息 -->
+            <!-- 固定公司信息 -->
             <p><strong>Address:</strong> 123 Diamond Street, Stockholm, Sweden</p>
             <p><strong>Email:</strong> <a href="mailto:info@mycompany.com">info@mycompany.com</a></p>
             <p><strong>Phone:</strong> +46 70 123 4567</p>
@@ -96,6 +99,7 @@
             </div>
         </main>
     </div>
+
     <script src="/css/footer.js"></script>
 
     <script>
