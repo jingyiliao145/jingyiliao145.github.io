@@ -31,16 +31,20 @@ nav a:hover {
 
 main {
     padding: 32px 24px;
+    position: relative;
+    z-index: 2; /* 保证内容在 overlay 上方 */
 }
 
 footer {
+    position: relative;
+    z-index: 2; /* 保证 footer 在 overlay 上方 */
     text-align: center;
     padding: 20px;
     border-top: 1px solid #eee;
     margin-top: 32px;
 }
 
-/* ===== 首页背景（保持不动） ===== */
+/* ===== 首页背景 ===== */
 .hero-image {
     height: 90vh;
     background-image: url("../images/index-back2.jpg");
@@ -57,6 +61,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none; /* 不阻挡点击 */
+    z-index: 1;
 }
 
 .hero-content {
@@ -69,34 +75,7 @@ footer {
     backdrop-filter: blur(4px);
 }
 
-.hero-content h2 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
-
-.hero-button {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #ffffff;
-    color: #222;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-
-.hero-button:hover {
-    background-color: #e5e5e5;
-    transform: translateY(-2px);
-}
-
-/* ===== 产品列表（重点紧凑化） ===== */
+/* ===== 产品列表 ===== */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -146,15 +125,15 @@ footer {
     color: #888888;
 }
 
-/* ===== 非首页页面通用背景 ===== */
+/* ===== 非首页页面背景 ===== */
 .page-background {
     background-image: url("../images/index-back.jpg");
-    background-size: cover;            /* 保证覆盖容器 */
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
     width: 100vw;
-    height: 100vh;                     /* 占满整个视口 */
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -162,13 +141,15 @@ footer {
 .page-background .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);    /* 半透明覆盖层，可调 */
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none; /* 允许点击 */
+    z-index: 1;
 }
 
 /* ===== 响应式优化 ===== */
 @media (max-width: 768px) {
     .page-background {
-        background-position: center top; /* 手机竖屏优先显示上方 */
+        background-position: center top;
     }
 
     .hero-content {
