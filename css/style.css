@@ -7,7 +7,7 @@ body {
 
 header, main, footer {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* 保证内容在 overlay 上方，可点击 */
 }
 
 nav a {
@@ -34,13 +34,13 @@ nav a:hover {
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.45);
-    pointer-events: none; /* 不阻挡点击 */
+    pointer-events: none; /* 不挡点击 */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* 确保按钮可点击 */
+    z-index: 2;
     max-width: 720px;
     margin: 0 auto;
     padding: 2rem;
@@ -68,7 +68,79 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* ===== 响应式 ===== */
+/* ===== 产品列表（统一图片大小） ===== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.product-img {
+    width: 220px;       /* 固定宽度 */
+    height: 220px;      /* 固定高度 */
+    object-fit: cover;  /* 填充容器并裁剪多余部分 */
+    display: block;
+    margin: 0 auto 8px;
+    border-radius: 8px; /* 可选圆角 */
+}
+
+.sale-img {
+    border: 2px solid #c40000;
+    box-shadow: 0 0 6px rgba(196, 0, 0, 0.5);
+}
+
+.product-info h3 {
+    font-size: 15px;
+    margin: 4px 0;
+}
+
+.price {
+    margin: 2px 0;
+    font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 4px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.status.sale {
+    color: #c40000;
+}
+
+.status.not-sale {
+    color: #888888;
+}
+
+/* ===== 非首页背景 ===== */
+.page-background {
+    background-image: url("../images/index-back.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-background .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ===== 响应式优化 ===== */
 @media (max-width: 768px) {
     .hero-content {
         max-width: 90%;
@@ -82,12 +154,23 @@ nav a:hover {
     .hero-content p {
         font-size: 1rem;
     }
+
+    .product-grid {
+        gap: 16px;
+    }
+
+    .product-img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 /* ===== 中文字体优化 ===== */
-body[lang="zh"] .hero-content {
+body[lang="zh"] .hero-content,
+body[lang="zh"] main {
     font-size: 0.9rem;
     line-height: 1.4;
+    padding: 1.5rem;
 }
 
 body[lang="zh"] .hero-content h2 {
@@ -96,4 +179,22 @@ body[lang="zh"] .hero-content h2 {
 
 body[lang="zh"] .hero-content p {
     font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+body[lang="zh"] main {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+    body[lang="zh"] .hero-content h2 {
+        font-size: 1.6rem;
+    }
+    body[lang="zh"] .hero-content p {
+        font-size: 0.9rem;
+    }
+    body[lang="zh"] main {
+        padding: 16px;
+    }
 }
